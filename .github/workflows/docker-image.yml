@@ -26,15 +26,15 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
-          context: ./cascade-music
-          file: ./cascade-music/backend.Dockerfile
+          context: ./Cascade-music
+          file: ./Cascade-music/backend/backend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-backend-review:latest
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:
           context: ./cascade---frontend
-          file: ./cascade---frontend/frontend.Dockerfile
+          file: ./frontend/frontend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-frontend-review:latest
